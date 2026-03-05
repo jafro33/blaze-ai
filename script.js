@@ -302,7 +302,7 @@ const knowledgeBase = [
 {keys:["matrix multiplication"], answer:"Matrix multiplication combines two matrices to produce a third, following specific row-by-column rules."},
 {keys:["complex numbers"], answer:"Complex numbers have a real part and an imaginary part and are written in the form a + bi."},
 {keys:["numerical methods"], answer:"Numerical methods approximate solutions to mathematical problems using algorithms and computational techniques."},
-{keys:["fourier transform"], answer:"The Fourier transform decomposes functions into frequencies, widely used in signal processing."},
+{keys:["fouriertransform"], answer:"The Fourier transform decomposes functions into frequencies, widely used in signal processing."},
 {keys:["laplace transform"], answer:"The Laplace transform converts differential equations into algebraic equations for easier solving."},
 {keys:["sequences"], answer:"A sequence is an ordered list of numbers following a specific rule or pattern."},
 {keys:["series"], answer:"A series is the sum of the terms of a sequence, which may converge or diverge."},
