@@ -121,7 +121,7 @@ const knowledgeBase = [
 {keys:["object oriented programming","oop"], answer:"OOP is a paradigm based on objects and classes, encapsulation, inheritance, and polymorphism to model real-world concepts."},
 {keys:["functional programming"], answer:"Functional programming treats computation as the evaluation of mathematical functions and avoids changing state or mutable data."},
 {keys:["version control"], answer:"Version control systems like Git track changes to code, allow collaboration, and manage project history."},
-{keys:["git"], answer:"Git is a distributed version control system used to manage project source code, allowing commits, branching, and merging."},
+{keys:["github"], answer:"Git is a distributed version control system used to manage project source code, allowing commits, branching, and merging."},
 {keys:["docker"], answer:"Docker packages applications into containers, enabling consistent environments across development, testing, and production."},
 {keys:["kubernetes"], answer:"Kubernetes automates deployment, scaling, and management of containerized applications across clusters of machines."},
 {keys:["rest api"], answer:"REST API (Representational State Transfer) uses HTTP methods to perform CRUD operations on resources represented in JSON or XML."},
