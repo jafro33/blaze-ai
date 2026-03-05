@@ -1,26 +1,20 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Poppins, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
+  margin: 0px;
 
   /* Animated Gradient */
-  background: linear-gradient(
-    360deg,
-    #290c0c,
-    #302b63,
-    #f90202,
-    #4c6ee9
-  );
-
+  background: linear-gradient(360deg, #290c0c, #302b63, #f90202, #4c6ee9);
   background-size: 400% 400%;
   animation: gradientMove 10s ease infinite;
 
-  overflow: hidden;
+  overflow-x: hidden;
   transition: all 0.5s ease;
 }
 
@@ -80,14 +74,22 @@ body {
 }
 
 body.light{
-background:#f4f4f4;
-color:black;
+  background:#f4f4f4;
+  color:black;
+}
+
+/* responsive adjustments */
+@media (max-width: 600px) {
+  .container { width: 100%; height: 100vh; border-radius: 0; }
+  header { flex-direction: column; gap: 10px; }
+  .inputArea { flex-direction: column; }
+  button { width: 100%; }
 }
 
 .container{
 width:100%;
 max-width:750px;
-height:80vh;
+height:100vh;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(25px);
 border-radius:25px;
@@ -99,11 +101,34 @@ overflow:hidden;
 /* ================= HEADER ================= */
 
 header{
-padding:18px;
-text-align:center;
-font-family:Orbitron;
-background:rgba(0,0,0,0.4);
-position:relative;
+  padding:18px 24px;
+  /* remove text-align so flex works */
+  font-family: 'Orbitron', sans-serif;
+  background:rgba(0,0,0,0.4);
+  position:relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .topButtons{
@@ -120,13 +145,13 @@ color:#00f5ff;
 /* ================= CHAT ================= */
 
 #chat{
-flex:1;
-padding:15px;
-overflow-y:auto;
-display:flex;
-flex-direction:column;
-gap:12px;
-scroll-behavior:smooth;
+  flex:1;
+  padding:15px 20px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  scroll-behavior:smooth;
 }
 
 .msg{
@@ -208,6 +233,20 @@ background:linear-gradient(135deg,#00f5ff,#7f00ff);
   align-items: center;
 }
 
+/* thinking bubble style */
+.thinking {
+  background: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 8px 12px;
+  width: fit-content;
+  max-width: 80%;
+}
+
+.thinking .typing span {
+  background: #fff;
+}
+
 /* 🔵 Typing Dots */
 .typing span {
   width: 10px;
@@ -255,11 +294,27 @@ background:linear-gradient(135deg,#00f5ff,#7f00ff);
 /* ================= INPUT ================= */
 
 .inputArea{
-display:flex;
-gap:8px;
-padding:10px;
-background:rgba(0,0,0,0.4);
-flex-wrap:wrap;
+  display:flex;
+  gap:8px;
+  padding:10px;
+  background:rgba(0,0,0,0.4);
+  flex-wrap:wrap;
+  align-items: center;
+}
+
+input{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:20px;
+  outline:none;
+  background: rgba(255,255,255,0.1);
+  color: inherit;
+  transition: background 0.3s ease;
+}
+
+input:focus{
+  background: rgba(255,255,255,0.2);
 }
 
 input{
@@ -271,20 +326,25 @@ outline:none;
 }
 
 button {
-  padding: 10px 15px;
+  padding: 10px 18px;
   border: none;
   border-radius: 25px;
   background: linear-gradient(135deg,#00f5ff,#7f00ff,#00f5ff);
   background-size: 200% 200%;
   color: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-weight: 600;
   position: relative;
   overflow: hidden;
 
   /* Smooth Gradient Animation */
   animation: gradientShift 4s ease infinite;
+}
+
+button:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,245,255,0.5);
 }
 
 /* 🔥 Hover Effect */
